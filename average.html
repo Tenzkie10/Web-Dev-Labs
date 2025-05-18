@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab Exercise 6</title>
+
+</head>
+<body>
+<script>
+	var eng, ma, sci, res;
+	eng = parseFloat(prompt("Enter English Grade: "));
+	ma = parseFloat(prompt("Enter Math Grade: "));
+	sci = parseFloat(prompt("Enter Science Grade: "));
+	
+	
+	var ave = (eng + ma + sci) / 3 ;
+	res = parseFloat(ave)>=75 ? "Your average is: " + ave.toFixed(2) + "\nCongratulations, you PASSED!" : "Your average is: " + ave.toFixed(2) +"\nSorry you DID NOT PASSED!";
+	alert(res)
+
+</script>
+</body>
+</html>

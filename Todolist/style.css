@@ -1,0 +1,61 @@
+/*
+Tinamad mag comment sir, basta design lang AHHAHAHAH eme
+*/
+body {
+    font-family: Arial;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+}
+nav {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.todo-container {
+    background-color: #00d2b7;
+    padding: 40px;
+    width: 20%;
+    text-align: center;
+    margin: 30px auto;
+    border: 2px solid #333; 
+    border-radius: 10px;
+}
+.todo-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+input[type="text"] {
+    width: 60%;
+    padding: 8px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}

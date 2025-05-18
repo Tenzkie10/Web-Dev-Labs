@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .todo-container {
+			background-color: #00d2b7;
+			padding: 40px;
+			width: 20%;
+			text-align: center;
+			margin: 30px auto;
+			border: 2px solid #333; 
+			border-radius: 10px;
+        }
+        .todo-item {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+		input[type="text"] {
+            width: 60%;
+            padding: 8px;
+            margin-right: 10px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="#">To Do List</a>
+        </div>
+    </nav>
+
+    <div class="todo-container">
+        <h2>Your To-Do List</h2>
+        <div class="todo-list" id="todo-list">
+        </div>
+        
+        <div>
+            <input type="text" id="new-task" placeholder="Add a new task">
+            <button onclick="addTask()" style=>Add Task</button>
+        </div>
+    </div>
+
+    <script>
+        function addTask() {
+            var newTaskInput = document.getElementById("new-task");
+            var todoList = document.getElementById("todo-list");
+
+            if (newTaskInput.value.trim() !== "") {
+                var newTask = document.createElement("div");
+                newTask.className = "todo-item";
+                newTask.innerHTML = '<span contenteditable="true">' + newTaskInput.value + '</span>';
+
+                // Add edit and remove buttons
+                var editButton = document.createElement("button");
+                editButton.textContent = "Edit";
+                editButton.onclick = function() {
+                    editTask(newTask);
+                };
+
+                var removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.onclick = function() {
+                    removeTask(newTask);
+                };
+
+                newTask.appendChild(editButton);
+                newTask.appendChild(removeButton);
+
+                todoList.appendChild(newTask);
+                newTaskInput.value = "";
+            }
+        }
+
+        function editTask(task) {
+            var editableSpan = task.querySelector('span[contenteditable="true"]');
+            editableSpan.focus();
+        }
+
+        function removeTask(task) {
+            if (confirm("Are you sure you want to remove this task?")) {
+                task.parentNode.removeChild(task);
+            }
+        }
+    </script>
+</body>
+</html>
