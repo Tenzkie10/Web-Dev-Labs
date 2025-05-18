@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab Exercise 5</title>
+</head>
+<body>
+<h1>Triangle Area Calculator</h1>
+<p id="result"></p>
+<script>
+function calculateArea() {
+    var sideA = 10;
+    var sideB = 20;
+    var sideC = 30;
+
+    // Checking the triangle inequality theorem
+    if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA) {
+        return document.getElementById("result").innerHTML = "A triangle with sides " + sideA +", " + sideB +", " + sideC + " cannot exist.";
+    } else {
+        // Calculating the area using Heron's formula
+        var s = (sideA + sideB + sideC) / 2;
+        var area = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+        return document.getElementById("result").innerHTML = "The area of the triangle is " + area.toFixed(2) + " square units.";
+    }
+}
+
+document.getElementById("result").innerHTML = calculateArea();
+</script>
+</body>
+</html>

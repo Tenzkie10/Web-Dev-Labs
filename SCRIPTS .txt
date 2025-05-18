@@ -1,0 +1,101 @@
+SCRIPTS 
+#FOR PUBLISHER
+
+INSERT INTO publisher (NAME, PHONE, ADDRESS)
+ VALUES ('Course Technology', '1', 'USA');
+ 
+ INSERT INTO publisher 
+ VALUES ('Delmar Learning', '5', 'PHILIPPINES');
+ 
+INSERT INTO publisher 
+ VALUES ('Nelson Engineering', '3', 'INDIA');
+ 
+INSERT INTO publisher 
+ VALUES ('PEARSON', '4', ' ');
+ 
+INSERT INTO publisher 
+ VALUES ('Technical Publihers', '6', ' ');
+ 
+INSERT INTO publisher 
+ VALUES ('dsworth', '2', 'JAPAN');
+ 
+select * from publisher;
+
+
+#FOR BOOK
+
+INSERT INTO book (BOOK_ID, TITLE, PUB_YEAR, PUBLISHER_NAME) 
+VALUES ('1','Programming 1','2020','Course Technology');
+
+INSERT INTO book
+VALUES ('2','Database System','2021','Course Technology');
+
+INSERT INTO book
+VALUES ('3','Introduction to Web development','2019','Delmar Learning');
+
+INSERT INTO book
+VALUES ('4','System Analysis and Design','2018','PEARSON');
+
+INSERT INTO book
+VALUES ('5','HTML','2020','Technical Publihers');
+
+
+#FOR AUTHOR
+
+INSERT INTO book_author (AUTHOR_NAME, BOOK_ID)
+VALUES ('JAMES', '1');
+
+INSERT INTO book_author
+VALUES ('MICHAEL', '2');
+
+INSERT INTO book_author
+VALUES ('NAP', '3');
+
+INSERT INTO book_author
+VALUES ('ESTRELLA', '4');
+
+INSERT INTO book_author
+VALUES ('NAP', '5');
+
+SELECT * FROM library_branch;
+
+INSERT INTO library_branch (BRANCH_ID, BRANCH_NAME, ADDRESS)
+VALUES ('1','CFL','MMSU-Batac City');
+
+INSERT INTO library_branch
+VALUES ('2','CTE','MMSU-LAOAG');
+
+INSERT INTO library_branch
+VALUES ('3','LHS','MMSU Laoag');
+
+select * from book_author;
+
+#FOR BOOK_COPIES
+
+INSERT INTO book_copies (NO_OF_COPIES, BOOK_ID, BRANCH_ID)
+VALUES ('5', '1','2');
+
+INSERT INTO book_copies
+VALUES ('5', '5','3');
+
+select * from book_copies;
+
+
+#FOR CARD
+
+INSERT INTO card (CARD_NO)
+VALUES ('100');
+
+INSERT INTO card
+VALUES ('101');
+
+INSERT INTO card 
+VALUES ('102');
+
+INSERT INTO card 
+VALUES ('103');
+
+INSERT INTO card
+VALUES ('104');
+
+select * from card;
